@@ -1,4 +1,5 @@
 import React from 'react';
+import MapComponent from './Map.jsx';
 
 const Home = ({ updatePage }) => {
 
@@ -21,7 +22,7 @@ const Home = ({ updatePage }) => {
         Welcome, user!
       </div>
       <div>
-        This is the map that has the markers for current fridges
+        <MapComponent />
       </div>
       <div>
         This is the bottom section for fridges on the map in a different viewing type

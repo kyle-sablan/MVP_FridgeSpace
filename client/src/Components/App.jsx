@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 import Login from './Login/Login.jsx';
 import Home from './Home/Home.jsx';
 import Fridge from './Fridge/Fridge.jsx';
@@ -8,7 +9,7 @@ const App = () => {
   const [currentPage, updatePage] = useState('home');
 
   return (
-    <div>
+    <AppContainer>
       {currentPage === 'login' && (
         <div>
           <Login updatePage={updatePage} />
@@ -29,8 +30,13 @@ const App = () => {
           <Update updatePage={updatePage} />
         </div>
       )}
-    </div>
+    </AppContainer>
   );
 };
+
+const AppContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 
 export default App;
