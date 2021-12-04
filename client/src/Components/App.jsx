@@ -11,26 +11,22 @@ const App = () => {
     <div>
       {currentPage === 'login' && (
         <div>
-          Login Page!
-          <Login />
+          <Login updatePage={updatePage} />
         </div>
       )}
       {currentPage === 'home' && (
         <div>
-          Home Page!
-          <Home />
+          <Home updatePage={updatePage} />
         </div>
       )}
       {currentPage === 'fridge' && (
         <div>
-          Fridge Page!
-          <Fridge />
+          <Fridge updatePage={updatePage} />
         </div>
       )}
       {currentPage === 'update' && (
         <div>
-          Update Page!
-          <Update />
+          <Update updatePage={updatePage} />
         </div>
       )}
     </div>
