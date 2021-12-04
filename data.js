@@ -67,4 +67,64 @@ const fridges = [
     }
 ];
 
+const inventory = [
+  {
+    id: 1,
+    fridgeId: 1,
+    item: 'bananas',
+    amount: '5',
+    needsDeletion: false
+  },
+  {
+    id: 2,
+    fridgeId: 1,
+    item: 'carrots',
+    amount: '3 bags',
+    needsDeletion: false
+  },
+  {
+    id: 3,
+    fridgeId: 2,
+    item: 'whole grain bread',
+    amount: '4 loaves',
+    needsDeletion: false
+  },
+  {
+    id: 4,
+    fridgeId: 2,
+    item: 'frozen mixed vegetables',
+    amount: '8 bags',
+    needsDeletion: false
+  },
+  {
+    id: 5,
+    fridgeId: 3,
+    item: 'spinach',
+    amount: '2 bushels',
+    needsDeletion: false
+  },
+  {
+    id: 6,
+    fridgeId: 5,
+    item: 'salad kit',
+    amount: '1',
+    needsDeletion: false
+  },
+  {
+    id: 7,
+    fridgeId: 5,
+    item: 'oranges',
+    amount: '15',
+    needsDeletion: false
+  },
+  {
+    id: 8,
+    fridgeId: 5,
+    item: 'water bottles',
+    amount: '24',
+    needsDeletion: false
+  }
+]
+
 module.exports.data = fridges;
+module.exports.inventory = inventory;
