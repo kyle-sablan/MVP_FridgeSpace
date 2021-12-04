@@ -31,50 +31,40 @@
 
 const fridges = [
   {
-    fridge: {
-      id: 1,
-      name: 'Otay Mesa Community Fridge & Garden',
-      address: '3794 Gatty Street, San Diego, CA, 92154',
-      coordinates: [32.586210, -117.051809],
-      active: true
-    }
+    id: 1,
+    name: 'Otay Mesa Community Fridge & Garden',
+    address: '3794 Gatty Street, San Diego, CA, 92154',
+    coordinates: [32.586210, -117.051809],
+    active: true
   },
   {
-    fridge: {
-      id: 2,
-      name: 'National City Community Fridge',
-      address: '635 E. 7th Street, National City, CA, zip',
-      coordinates: [32.678880, -117.100012],
-      active: true
-    }
+    id: 2,
+    name: 'National City Community Fridge',
+    address: '635 E. 7th Street, National City, CA, zip',
+    coordinates: [32.678880, -117.100012],
+    active: true
   },
   {
-    fridge: {
-      id: 3,
-      name: 'Normal Heights Community Fridge',
-      address: '4650 Mansfield St, San Diego, CA, zip',
-      coordinates: [32.762899, -117.118234],
-      active: true
-    }
+    id: 3,
+    name: 'Normal Heights Community Fridge',
+    address: '4650 Mansfield St, San Diego, CA, zip',
+    coordinates: [32.762899, -117.118234],
+    active: true
   },
   {
-    fridge: {
-      id: 4,
-      name: 'City Heights Community Fridge',
-      address: '3772 Wilson Ave, San Diego, CA, 92104',
-      coordinates: [32.747492, -117.117233],
-      active: false
-    }
+    id: 4,
+    name: 'City Heights Community Fridge',
+    address: '3772 Wilson Ave, San Diego, CA, 92104',
+    coordinates: [32.747492, -117.117233],
+    active: false
   },
   {
-    fridge: {
-      id: 5,
-      name: 'Imperial Beach Comumunity Fridge & Garden',
-      address: '828 5th Street, Imperial Beach, CA, 91932',
-      coordinates: [32.581613, -117.122628],
-      active: true
+    id: 5,
+    name: 'Imperial Beach Comumunity Fridge & Garden',
+    address: '828 5th Street, Imperial Beach, CA, 91932',
+    coordinates: [32.581613, -117.122628],
+    active: true
     }
-  }
 ];
 
 module.exports.data = fridges;

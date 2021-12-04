@@ -7,6 +7,7 @@ import Update from './Update/Update.jsx';
 
 const App = () => {
   const [currentPage, updatePage] = useState('home');
+  const [currentFridge, selectFridge] = useState(null);
 
   return (
     <AppContainer>
@@ -17,17 +18,27 @@ const App = () => {
       )}
       {currentPage === 'home' && (
         <div>
-          <Home updatePage={updatePage} />
+          <Home
+            updatePage={updatePage}
+            currentFridge={currentFridge}
+            selectFridge={selectFridge}
+          />
         </div>
       )}
       {currentPage === 'fridge' && (
         <div>
-          <Fridge updatePage={updatePage} />
+          <Fridge
+            updatePage={updatePage}
+            currentFridge={currentFridge}
+          />
         </div>
       )}
       {currentPage === 'update' && (
         <div>
-          <Update updatePage={updatePage} />
+          <Update
+            updatePage={updatePage}
+            currentFridge={currentFridge}
+          />
         </div>
       )}
     </AppContainer>

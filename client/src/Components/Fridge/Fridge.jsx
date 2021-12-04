@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Fridge = ({ updatePage }) => {
+const Fridge = ({ updatePage, currentFridge }) => {
   const backToHome = (e) => {
     e.preventDefault();
     updatePage('home');
@@ -17,7 +17,7 @@ const Fridge = ({ updatePage }) => {
         back button
       </button>
       <div>
-        im on the fridge page
+        {currentFridge.name}
       </div>
       <button onClick={updateStock}>
         click me to update the fridge's inventory

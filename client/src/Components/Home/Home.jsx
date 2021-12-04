@@ -1,12 +1,7 @@
 import React from 'react';
-import MapComponent from './Map.jsx';
+import Map from './Map.jsx';
 
-const Home = ({ updatePage }) => {
-
-  const changeToFridge = (e) => {
-    e.preventDefault();
-    updatePage('fridge');
-  };
+const Home = ({ updatePage, currentFridge, selectFridge }) => {
 
   const logout = (e) => {
     e.preventDefault();
@@ -22,14 +17,19 @@ const Home = ({ updatePage }) => {
         Welcome, user!
       </div>
       <div>
-        <MapComponent />
+        <Map
+          updatePage={updatePage}
+          currentFridge={currentFridge}
+          selectFridge={selectFridge}
+          googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+          loadingElement={<div style={{ height: `100%` }} />}
+          containerElement={<div style={{ height: `400px` }} />}
+          mapElement={<div style={{ height: `100%` }} />}
+        />
       </div>
       <div>
         This is the bottom section for fridges on the map in a different viewing type
       </div>
-      <button onClick={changeToFridge}>
-        click me to go to fridge page
-      </button>
       <div>
         this is the bottom banner for the app
       </div>
