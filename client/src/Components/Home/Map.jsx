@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow } from 'react-google-maps';
+import { Badge } from '@mantine/core';
 const { data } = require('../../../../data.js');
 
 const Map = withScriptjs(withGoogleMap(({ updatePage, currentFridge, selectFridge }) => {
@@ -31,12 +32,27 @@ const Map = withScriptjs(withGoogleMap(({ updatePage, currentFridge, selectFridg
         }}
       >
         <div>
-          <div>
+          <div style={{'fontWeight': 'bold', 'fontSize': '18px'}}>
             {currentFridge.name}
           </div>
-          <button onClick={changeToFridge}>
-            {`Go to ${currentFridge.name}'s page`}
-          </button>
+          <div>
+            {currentFridge.address}
+          </div>
+          <Badge style={{
+            'backgroundColor': currentFridge.active ? 'rgb(154,207,172)' : 'rgb(206,55,56)',
+            'color': 'black'
+          }}
+          >
+            {currentFridge.active ? 'Working' : 'Not working'}
+          </Badge>
+          <div>
+            {currentFridge.active && (
+              <button onClick={changeToFridge}>
+                {`Go to ${currentFridge.name}'s page`}
+              </button>
+            )
+            }
+          </div>
         </div>
       </InfoWindow>
     )}

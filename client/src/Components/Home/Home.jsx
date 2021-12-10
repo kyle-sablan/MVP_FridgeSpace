@@ -1,21 +1,19 @@
 import React from 'react';
+import styled from 'styled-components';
 import Map from './Map.jsx';
+import Banner from './Banner.jsx';
+const { data } = require('../../../../data.js');
 
 const Home = ({ updatePage, currentFridge, selectFridge }) => {
 
-  const logout = (e) => {
-    e.preventDefault();
-    updatePage('login');
-  }
+  const fridgeElementClick = (fridge) => {
+    selectFridge(fridge);
+    updatePage('fridge');
+  };
 
   return (
-    <>
-      <button onClick={logout}>
-        click me to logout
-      </button>
-      <div>
-        Welcome, user!
-      </div>
+    <HomeContainer>
+      <Banner user={'hello'} updatePage={updatePage} />
       <div>
         <Map
           updatePage={updatePage}
@@ -27,14 +25,49 @@ const Home = ({ updatePage, currentFridge, selectFridge }) => {
           mapElement={<div style={{ height: `100%` }} />}
         />
       </div>
-      <div>
-        This is the bottom section for fridges on the map in a different viewing type
-      </div>
-      <div>
-        this is the bottom banner for the app
-      </div>
-    </>
+      <FridgeView>
+      Fridges within 25 mi:
+        {data.map((fridge) => (
+          <FridgeContainer onClick={() => {fridgeElementClick(fridge);}}>
+            <div>
+              {fridge.name}
+            </div>
+            <div>
+              {fridge.address}
+            </div>
+            <div>
+              {fridge.status}
+            </div>
+          </FridgeContainer>
+        ))}
+      </FridgeView>
+    </HomeContainer>
   );
 };
+
+const FridgeView = styled.div`
+  background-color: ;
+`;
+
+const FridgeContainer = styled.div`
+  border: solid black;
+  margin-bottom: 5px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &: hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+`;
+
+const HomeContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+`;
 
 export default Home;
