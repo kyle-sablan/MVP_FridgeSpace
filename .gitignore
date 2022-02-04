@@ -105,4 +105,4 @@ dist
 
 config.js
 .DS_Store
-bundle.js
+client/public/bundle.js
