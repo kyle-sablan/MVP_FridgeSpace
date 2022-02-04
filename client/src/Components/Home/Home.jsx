@@ -1,43 +1,43 @@
-import React from 'react';
-import styled from 'styled-components';
-import Map from './Map.jsx';
-import Banner from './Banner.jsx';
-const { data } = require('../../../../data.js');
+import React from "react";
+import styled from "styled-components";
+import Map from "./Map.jsx";
+import Banner from "./Banner.jsx";
+const { API_TOKEN } = require("../../../../config.js");
+const { data } = require("../../../../data.js");
 
 const Home = ({ updatePage, currentFridge, selectFridge }) => {
-
   const fridgeElementClick = (fridge) => {
     selectFridge(fridge);
-    updatePage('fridge');
+    updatePage("fridge");
   };
 
   return (
     <HomeContainer>
-      <Banner user={'hello'} updatePage={updatePage} />
+      <Banner user={"hello"} updatePage={updatePage} />
       <div>
         <Map
           updatePage={updatePage}
           currentFridge={currentFridge}
           selectFridge={selectFridge}
-          googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+          // add for non-dev
+          // googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${API_TOKEN}`}
+          googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places`}
           loadingElement={<div style={{ height: `100%` }} />}
           containerElement={<div style={{ height: `400px` }} />}
           mapElement={<div style={{ height: `100%` }} />}
         />
       </div>
       <FridgeView>
-      Fridges within 25 mi:
+        Fridges within 25 mi:
         {data.map((fridge) => (
-          <FridgeContainer onClick={() => {fridgeElementClick(fridge);}}>
-            <div>
-              {fridge.name}
-            </div>
-            <div>
-              {fridge.address}
-            </div>
-            <div>
-              {fridge.status}
-            </div>
+          <FridgeContainer
+            onClick={() => {
+              fridgeElementClick(fridge);
+            }}
+          >
+            <div>{fridge.name}</div>
+            <div>{fridge.address}</div>
+            <div>{fridge.status}</div>
           </FridgeContainer>
         ))}
       </FridgeView>
