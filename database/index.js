@@ -12,6 +12,7 @@ const fridgeSchema = mongoose.Schema({
   active: Boolean,
   note: String,
   updatedAt: Date,
+  host: String,
 });
 
 const inventorySchema = mongoose.Schema({
