@@ -15,6 +15,20 @@ const fridgeSchema = mongoose.Schema({
   host: String,
 });
 
+const userSchema = mongoose.Schema({
+  firstName: String,
+  lastName: String,
+  username: String,
+  password: String,
+  email: String,
+  isHost: Boolean,
+  hostedFridges: Array,
+  savedFridges: Array,
+  activity: Array
+  avatar: Number,
+
+});
+
 const inventorySchema = mongoose.Schema({
   fridgeId: Number,
   item: String,
@@ -22,4 +36,6 @@ const inventorySchema = mongoose.Schema({
   needsDeletion: Boolean,
 });
 
-module.exports = connection;
+module.exports.fridgeSchema = fridgeSchema;
+module.exports.userSchema = userSchema;
+module.exports.inventorySchema = inventorySchema;
